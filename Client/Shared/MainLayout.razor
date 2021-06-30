@@ -1,21 +1,87 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="px-8 w-full mx-auto">
-    <div class="fixed flex drop-shadow-md justify-center content-center inset-x-8 h-16 top-0 rounded-b-lg bg-gray-100 border-r-2 border-l-2 border-b-2 border-gray-200">
+<div class="px-4 md:px-8 w-screen mx-auto">
+    <div class="fixed flex z-40 drop-shadow-md justify-center content-center inset-x-0 md:inset-x-8 h-16 top-0 rounded-b-lg bg-gray-100 border-r-2 border-l-2 border-b-2 border-gray-200">
         <NavMenu />
+
+        <div class="flex md:hidden content-center justify-between w-full">
+            <span class="self-center font-sans font-bold mx-4 text-xl">
+                Meet Yibo Yan
+            </span>
+
+            @* NavMenuButton *@
+            <span class="self-center w-8 h-8 p-1 mx-4
+                         rounded border-2 hover:border-cyan-500
+                         transition duration-500
+                         @menuButtonBg"
+                         @onclick="ToggleMenu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g data-name="Layer 2"><g data-name="menu"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"/><rect x="3" y="11" width="18" height="2" rx=".95" ry=".95"/><rect x="3" y="16" width="18" height="2" rx=".95" ry=".95"/><rect x="3" y="6" width="18" height="2" rx=".95" ry=".95"/></g></g></svg>
+            </span>
+        </div>
+
         @* <a class="mt-6 ml-8 navtext pb-2 border-b-4 mr-6 border-purple-700 hover:border-green-400" href="http://blazor.net" target="_blank">Learn about Blazor</a> *@
     </div>
 
+    <div class="md:hidden">
+        <div class="fixed top-0 bottom-0 h-full w-screen 
+            inset-x-0 @backgorundBlur
+            z-30 transition-all duration-500"
+            @onclick="ToggleMenu">
+        </div>
+        
+        <div class="fixed bottom-0 h-48 w-screen
+                    inset-x-0 bg-gray-100 z-50
+                    transition-all duration-500 rounded-t-lg
+                    @menuShadow
+                    @menuTrans">
+            <div>
+                <CascadingValue Value="this">
+                    <MobileNavMenu/>
+                </CascadingValue>
+            </div>
+        </div>
+    </div>
+    
+
     <div class="bg-gradient-to-br from-indigo-700 to-green-600 w-full h-60 rounded-xl mt-20 flex justify-center content-center">
         <div class="flex flex-col self-center">
-            <span class="text-white font-bold text-center text-5xl text-shadow-xl">Yibo Yan</span>
-            <span class="text-white font-medium text-center text-3xl text-shadow-xl mt-5">CS + Stats @@ UC Davis</span>
+            <span class="text-white font-bold text-center text-5xl text-shadow-xl">
+                Yibo Yan
+            </span>
+            <span class="text-white font-medium text-center text-3xl text-shadow-xl mt-5">
+                CS + Stats @@ UC Davis
+            </span>
         </div>
         
     </div>
-
+    
     @Body
 </div>
+
+
+@code {
+    static private bool isMenuOpen = false;
+    static public string menuButtonBg = "";
+    static public string backgorundBlur = "invisible";
+
+    private string menuTrans = "invisible translate-y-48";
+    private string menuShadow = "";
+
+    private string getCssClass(string value, string defaultValue, string otherValue) 
+    {
+        return value == defaultValue ? otherValue : defaultValue;
+    }
+
+    public void ToggleMenu()
+    {
+        isMenuOpen = !isMenuOpen;
+        menuButtonBg = getCssClass(menuButtonBg, "", "bg-cyan-500");
+        backgorundBlur = getCssClass(backgorundBlur, "invisible", "visible bg-gray-500  bg-opacity-70 backdrop-blur-sm");
+        menuTrans = getCssClass(menuTrans, "invisible translate-y-48", "visible translate-y-0");
+        menuShadow = getCssClass(menuShadow, "", "shadow-t-lg");
+        StateHasChanged();
+    }
+}
 
 
 @* <div class="px-8 w-full mx-auto">
