@@ -20,6 +20,12 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
+      - uses: actions/setup-dotnet@vv1.8.1
+        with:
+          dotnet-version: '3.1.x'
+      - uses: actions/setup-dotnet@vv1.8.1
+        with:
+          dotnet-version: '5.0.x'
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
