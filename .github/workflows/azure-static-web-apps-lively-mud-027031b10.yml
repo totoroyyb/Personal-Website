@@ -25,7 +25,7 @@ jobs:
         uses: Azure/static-web-apps-deploy@v1
         env:
           ENABLE_MULTIPLATFORM_BUILD: true
-          PRE_BUILD_COMMAND: "wget 'https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh' ; ./dotnet-install.sh --version 3.1.410;"
+          PRE_BUILD_COMMAND: "wget 'https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh' ; chmod u+x ./dotnet-install.sh ; ./dotnet-install.sh --version 3.1.410;"
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_LIVELY_MUD_027031B10 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
