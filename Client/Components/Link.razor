@@ -1,0 +1,35 @@
+<a href="@URL" 
+   class="font-medium border-b-2 border-cyan-600 hover:border-cyan-400
+          transition-colors duration-300 mx-1">
+    <div class="inline-flex items-center">
+        @ChildContent
+
+        @if (ShowIcon) {
+            <span class="h-4 w-4 ml-1">
+            @if (IsExternal) {
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="text-gray-500" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+            } else {
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="text-gray-500" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg>
+            }
+            </span>
+        }
+    </div>
+</a>
+
+@code {
+    [Parameter]
+    public string URL { get; set; }
+
+    [Parameter]
+    public bool IsExternal { get; set; } = true;
+
+    [Parameter]
+    public bool ShowIcon { get; set; } = true;
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+}

@@ -1,9 +1,13 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="px-4 md:px-8 w-screen mx-auto">
-    <div class="fixed flex z-40 drop-shadow-md justify-center content-center inset-x-0 md:inset-x-8 h-16 top-0 rounded-b-lg bg-gray-100 border-r-2 border-l-2 border-b-2 border-gray-200">
+<div class="px-4 md:px-8 mx-auto max-w-5xl">
+    <div class="fixed flex z-40 drop-shadow-md justify-center content-center 
+                max-w-5xl mx-auto
+                inset-x-0 md:inset-x-8 h-16 top-0 rounded-b-lg
+              bg-gray-50 border-r-2 border-l-2 border-b-2 border-gray-100 border-opacity-90
+                bg-opacity-80 backdrop-blur-md">
         <NavMenu />
-
+        
         <div class="flex md:hidden content-center justify-between w-full">
             <span class="self-center font-sans font-bold mx-4 text-xl">
                 Meet Yibo Yan
@@ -11,7 +15,7 @@
 
             @* NavMenuButton *@
             <span class="self-center w-8 h-8 p-1 mx-4
-                         rounded border-2 hover:border-cyan-500
+                         rounded border-2 border-indigo-300 hover:border-cyan-500
                          transition duration-500
                          @menuButtonBg"
                          @onclick="ToggleMenu">
@@ -21,10 +25,12 @@
     </div>
 
     @* Footer *@
-    <div class="hidden md:flex justify-between
+    <div class="hidden md:flex justify-between 
+                max-w-5xl mx-auto
                 fixed bottom-0 inset-x-8 px-3 py-3 
-                border-l-2 border-t-2 border-r-2 border-gray-50 rounded
-                bg-gray-50 shadow-t-md">
+                border-l-2 border-t-2 border-r-2 border-gray-100 border-opacity-90 rounded
+                bg-gray-50 shadow-t-md
+                bg-opacity-80 backdrop-blur-md">
         <div class="self-center">
             Some Button
         </div>
@@ -65,10 +71,11 @@
                 CS + Stats @@ UC Davis
             </span>
         </div>
-        
     </div>
     
-    @Body
+    <div class="mb-20">
+        @Body
+    </div>
 </div>
 
 
