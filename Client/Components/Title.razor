@@ -1,0 +1,11 @@
+<span class="text-center text-2xl font-semibold @Class">
+    @ChildContent
+</span>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public string Class { get; set; } = "";
+}
