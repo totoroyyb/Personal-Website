@@ -1,12 +1,12 @@
 using System;
-using System.Net;
 using System.Linq;
-using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
 
 using BlazorApp.Shared;
-using System.Threading.Tasks;
 
 namespace BlazorApp.Api
 {
@@ -32,14 +32,11 @@ namespace BlazorApp.Api
             return summary;
         }
 
-        [Function("WeatherForecast")]
-        public async static Task<HttpResponseData> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequestData req,
-            FunctionContext executionContext)
+        [FunctionName("WeatherForecast")]
+        public static IActionResult Run(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
+            ILogger log)
         {
-            var logger = executionContext.GetLogger("WeatherForecast");
-            logger.LogInformation("Received Weather Request");
-
             var randomNumber = new Random();
             var temp = 0;
 
@@ -50,14 +47,7 @@ namespace BlazorApp.Api
                 Summary = GetSummary(temp)
             }).ToArray();
 
-            var response = req.CreateResponse(HttpStatusCode.OK);
-            //response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
-            await response.WriteAsJsonAsync(result);
-
-            //response.WriteString("Welcome to Azure Functions!");
-
-            return response;
+            return new OkObjectResult(result);
         }
-
     }
 }
