@@ -1,3 +1,8 @@
-<div class="flex justify-center content-center my-5">
+<div class="flex justify-center content-center mt-7 mb-4 @Class">
     <div class="h-2 w-16 border-2 rounded-md bg-blue-700 text-center"></div>
 </div>
+
+@code {
+    [Parameter]
+    public string Class { get; set; } = "";
+}
