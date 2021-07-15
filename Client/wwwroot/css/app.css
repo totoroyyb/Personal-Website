@@ -802,6 +802,9 @@ video {
 .items-center {
 	align-items: center;
 }
+.items-baseline {
+	align-items: baseline;
+}
 .justify-end {
 	justify-content: flex-end;
 }
@@ -967,9 +970,6 @@ video {
 }
 .bg-no-repeat {
 	background-repeat: no-repeat;
-}
-.p-3 {
-	padding: 0.75rem;
 }
 .p-2 {
 	padding: 0.5rem;
@@ -1276,6 +1276,11 @@ video {
 
 	.md\:p-3 {
 		padding: 0.75rem;
+	}
+
+	.md\:px-3 {
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
 	}
 
 	.md\:px-10 {
