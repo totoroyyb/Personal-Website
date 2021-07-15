@@ -5,6 +5,8 @@
     <RootNamespace>BlazorApp.Api</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="IpInfo" Version="1.1.9" />
+    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.20.1" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.3" />
   </ItemGroup>
   <ItemGroup>

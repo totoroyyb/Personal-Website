@@ -1,5 +1,11 @@
 ﻿@inherits LayoutComponentBase
 
+@using BlazorApp.Client.Services;
+@using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+
+@inject IApiClientService _apiClientService;
+@inject IWebAssemblyHostEnvironment HostEnvironment;
+
 <div class="px-6 md:px-10 mx-auto max-w-5xl">
     <div class="fixed flex z-40 drop-shadow-md justify-center content-center 
                 max-w-5xl mx-auto
@@ -101,13 +107,23 @@
         menuShadow = getCssClass(menuShadow, "", "shadow-t-lg");
         StateHasChanged();
     }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (HostEnvironment.IsProduction())
+        {
+            try 
+            {
+                await _apiClientService.GetLocationAsync();
+            } 
+            catch
+            {
+                Console.WriteLine("Some exception happed during logging geo location.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Skipped geo loc logging due to not in production mode.");
+        }
+    }
 }
-
-
-@* <div class="px-8 w-full mx-auto">
-    <div class="bg-gradient-to-br from-indigo-700 to-green-600 w-full h-60 rounded-xl mt-20">
-        <span>Text</span>
-    </div>
-
-    @Body
-</div> *@
