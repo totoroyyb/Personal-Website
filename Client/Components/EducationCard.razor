@@ -1,0 +1,64 @@
+<div class="p-3 w-full md:w-1/2">
+    <div class="flex flex-col border-b-2 py-3 px-1
+                 hover:border-purple-500
+                 transition-colors duration-500">
+        <div class="flex flex-row 
+                    justify-between
+                    space-x-1">
+            <div class="flex flex-col">
+                <div class="font-semibold">
+                    @SchoolName
+                </div>
+
+                <div class="text-sm">
+                    @DegreeInfo
+                </div>
+            </div>
+
+            <div class="flex flex-col items-end">
+                <div class="flex flex-row space-x-1 text-sm">
+                    <div>
+                        @StartDate
+                    </div>
+
+                    <div>
+                        -
+                    </div>
+
+                    <div>
+                        @EndDate
+                    </div>
+                </div>
+
+                <div class="text-sm">
+                    GPA @GPAInfo
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-2 text-sm">
+            @DetailContent
+        </div>    
+    </div>
+</div>
+
+@code
+{
+    [Parameter]
+    public string SchoolName { set; get; }
+
+    [Parameter]
+    public string DegreeInfo { set; get; }
+
+    [Parameter]
+    public string StartDate { set; get; }
+
+    [Parameter]
+    public string EndDate { set; get; }
+
+    [Parameter]
+    public string GPAInfo { set; get; }
+
+    [Parameter]
+    public RenderFragment DetailContent { set; get; }
+}
