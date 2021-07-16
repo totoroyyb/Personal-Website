@@ -1,0 +1,37 @@
+<div class="py-3 px-1 md:px-3 w-full md:w-1/2">
+    <div class="flex flex-col p-4 bg-white rounded-lg">
+        <div class="flex flex-wrap space-x-2 items-center -mb-1 -mt-2">
+            <PillButton/>
+            <PillButton/>
+            <PillButton/>
+        </div>
+
+        <div class="flex justify-between items-baseline">
+            <p class="font-semibold text-lg">YunFun - iOS App</p>
+
+            <p>2021.2</p>
+        </div>
+
+        <div class="flex flex-col mt-1">
+            @if (DetailContent == null)
+            {
+                <DetailEntry Content="Here is some detailed information"/>
+                <DetailEntry Content="Another Info"/>
+            }
+            else
+            {
+                @DetailContent
+            }
+        </div>
+
+        <div class="mt-1">
+            Link Area
+        </div>
+    </div>
+</div>
+
+@code 
+{
+    [Parameter]
+    public RenderFragment DetailContent { get; set; }
+}

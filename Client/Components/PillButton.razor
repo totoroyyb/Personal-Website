@@ -1,0 +1,11 @@
+<div class="h-6 flex bg-green-400 rounded-md py-2 px-3 items-center my-2">
+    <p class=" text-xs text-white font-medium">
+        @((Text == null || Text.Length == 0) ? "Texts" : Text)
+    </p>
+</div>
+
+@code
+{
+    [Parameter]
+    public string Text { get; set; }
+}
