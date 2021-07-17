@@ -9,6 +9,9 @@ module.exports = {
     darkMode: 'media',
     theme: {
         extend: {
+            fontSize: {
+                'ms': '.82rem'
+            },
             colors: {
                 cyan: colors.cyan
             },

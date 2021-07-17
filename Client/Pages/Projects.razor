@@ -1,17 +1,245 @@
 ﻿@page "/projects"
 
+@using BlazorApp.Client.Views.ProjectCards
+
 <div class="flex flex-col justify-center">
     <Divider />
 
     <Title>Projects</Title>
 
     <div class="flex flex-wrap mt-3">
-        <ProjectCard/>
-        <ProjectCard/>
-        <ProjectCard/>
-        <ProjectCard/>
-        <ProjectCard/>
-        <ProjectCard/>
+        <ProjectCard Title="MiniOS"
+                     Date="2021.6"
+                     Role="Individual Developer">
+            <PillContent>
+                <PillButton Text="Mini Kernal"/>
+                <PillButton Text="Rust"/>
+            </PillContent>
+
+            <DetailContent>
+                <DetailEntry Content="Made a practice mini kernel implemenatation project which followed Philipp Oppermann's blog."/>
+                <DetailEntry Content="Implemented VGA display, exception and interrupts handling, rudimentary paging, and simple heap allocation."/>
+                <DetailEntry Content="I am planning to add more functionalities into it, such as scheduler, preemption, and file system."/>
+            </DetailContent>
+
+            <Links>
+                <Link URL="https://github.com/totoroyyb/Mini-OS">
+                    GitHub Repo
+                </Link>
+            </Links>
+        </ProjectCard>
+
+        <ProjectCard Title="House Analytic"
+                     Date="2021.3"
+                     Role="Individual Developer">
+            <PillContent>
+                <PillButton Text="Mini Kernal"/>
+                <PillButton Text="Rust"/>
+            </PillContent>
+
+            <DetailContent>
+                <DetailEntry Content="Made a practice mini kernel implemenatation project which followed Philipp Oppermann's blog."/>
+                <DetailEntry Content="Implemented VGA display, exception and interrupts handling, rudimentary paging, and simple heap allocation."/>
+                <DetailEntry Content="I am planning to add more functionalities into it, such as scheduler, preemption, and file system."/>
+            </DetailContent>
+
+            <Links>
+                <Link URL="https://github.com/totoroyyb/Mini-OS">
+                    GitHub Repo
+                </Link>
+            </Links>
+        </ProjectCard>
+
+        <ProjectCard Title="Maze Path Finder"
+                     Date="2020.10"
+                     Role="Team Member">
+            <PillContent>
+                <PillButton Text="Deep Learning"/>
+                <PillButton Text="In-Class"/>
+            </PillContent>
+
+            <DetailContent>
+                <DetailEntry Content="Implemented a maze solver agent by using deep learning, Q-learning updating rule, and reward system. In charged 
+                                      of modeling, training, and optimizing training algorithm. Built a website to visualize the training result. Tensorflow was used 
+                                      for model training, and Django was used for website backend. 
+                                     "/>
+                <DetailEntry Content="Used the idea of Manhattan Distance, Experience Buffer, and Random Forest to optimize the training time."/>
+            </DetailContent>
+
+            <Links>
+                <Link URL="https://github.com/chriscruz-1/Remy_Maze_Solver">
+                    GitHub Repo
+                </Link>
+            </Links>
+        </ProjectCard>
+
+        <ProjectCard Title="Fake News Detection"
+                     Date="2020.8"
+                     Role="Team Member">
+            <PillContent>
+                <PillButton Text="Machine Learning"/>
+                <PillButton Text="Research"/>
+            </PillContent>
+
+            <DetailContent>
+                <DetailEntry Content="In charge of modeling, data wrangling with Tensorflow."/>
+                <DetailEntry Content="Wrote several Python scripts as utilities for processing data, modeling and plotting."/>
+                <DetailEntry Content="Related paper was accepted by ITCA 2020 conference."/>
+            </DetailContent>
+
+            <Links>
+                <Link URL="https://github.com/totoroyyb/Spark-ML-Research">
+                    Scripts Repo
+                </Link>
+
+                <Link URL="https://ieeexplore.ieee.org/document/9421997/">
+                    IEEE Xplore
+                </Link>
+            </Links>
+        </ProjectCard>
+
+        <ProjectCard Title="AI Player for Games (Pong, Connect4)"
+                     Date="2020.2"
+                     Role="Individual Developer">
+            <PillContent>
+                <PillButton Text="AI"/>
+                <PillButton Text="In-Class"/>
+            </PillContent>
+
+            <DetailContent>
+                <DetailEntry Content="Wrote in Java, using MinMax algorithm with Alpha-beta Pruning implemented a Connect4 AI player."/>
+                <DetailEntry Content="Using reinforce learning, trained an AI player for pong game with PyTorch."/>
+            </DetailContent>
+        </ProjectCard>
+
+        <ProjectCard Title="Threading Scheduler"
+                     Date="2019.10"
+                     Role="Individual Developer">
+            <PillContent>
+                @* <PillButton Text="AI"/> *@
+                <PillButton Text="In-Class"/>
+            </PillContent>
+
+            <DetailContent>
+                <DetailEntry Content="Based on provided hardware abstraction layer, implemented a basic shell with support of cd, ls, pipe and file redirect."/>
+                <DetailEntry Content="Based on provided hardware abstraction layer, implemented a time-quantum based threading scheduler, supporting threading 
+                                      preemption, priority, some basic sleep functionality. Also implemented Mutex and semaphore. Implemented in C++."/>
+            </DetailContent>
+        </ProjectCard>
+
+        <ProjectCard Title="DrawerView"
+                     Date="2019.8"
+                     Role="Individual Developer">
+            <PillContent>
+                <PillButton Text="SwiftUI"/>
+            </PillContent>
+
+            <DetailContent>
+                <DetailEntry Content="Made a drawer view with SwiftUI and contributed this project to SwiftUI community."/>
+                <DetailEntry Content="Implemented several chaining animations in this project to improve UX."/>
+                <DetailEntry Content="Added modularity to facilitate developers to integrate and customize the drawer view easily."/>
+            </DetailContent>
+
+            <Links>
+                <Link URL="https://github.com/totoroyyb/DrawerView-SwiftUI">
+                    GitHub Repo
+                </Link>
+            </Links>
+        </ProjectCard>
+
+        <ProjectCard Title="CardView"
+                     Date="2019.7"
+                     Role="Individual Developer">
+            <PillContent>
+                <PillButton Text="SwiftUI"/>
+            </PillContent>
+
+            <DetailContent>
+                <DetailEntry Content="Made a card view, like the style of card in App Store, with SwiftUI."/>
+                <DetailEntry Content="Utilized GeometryReader to mimic the connected animation."/>
+            </DetailContent>
+
+            <Links>
+                <Link URL="https://github.com/totoroyyb/CardView-SwiftUI">
+                    GitHub Repo
+                </Link>
+            </Links>
+        </ProjectCard>
+
+        <ProjectCard Title="Song with Friends"
+                     Date="2019.3"
+                     Role="Team Leader">
+            <PillContent>
+                <PillButton Text="Web App"/>
+                <PillButton Text="In-Class"/>
+            </PillContent>
+
+            <DetailContent>
+                <DetailEntry Content="Using HTML, CSS, and JavaScript, implemented a web app, which can be used to listen songs with invited friends at the same time."/>
+                <DetailEntry Content="Utilized Spotify API to support playing songs. Utilized WebSocket to support a concise online chatroom in our app."/>
+            </DetailContent>
+        </ProjectCard>
+
+        <ProjectCard Title="Project Neon"
+                     Date="2018.4"
+                     Role="Individual Developer">
+            <PillContent>
+                <PillButton Text="Universal Windows Platform"/>
+            </PillContent>
+
+            <DetailContent>
+                <DetailEntry Content="Based on Universal Windows Platform (UWP), developed a simple video player with C# for Windows."/>
+                <DetailEntry Content="Utilized FFmpegInteropX for software decoding, and system level API for hardware acceleration."/>
+            </DetailContent>
+
+            <Links>
+                <Link URL="https://github.com/totoroyyb/Project-Neon">
+                    GitHub Repo
+                </Link>
+            </Links>
+        </ProjectCard>
+
+        <ProjectCard Title="LightDays"
+                     Date="2017.11"
+                     Role="Individual Developer">
+            <PillContent>
+                <PillButton Text="Universal Windows Platform"/>
+            </PillContent>
+
+            <DetailContent>
+                <DetailEntry Content="Based on Universal Windows Platform (UWP), developed a count-down like app with C# for Windows."/>
+                <DetailEntry Content="Utilized several Windows native functionalities, such as Adaptive Tiles, Windows Hello. Open-sourced on GitHub. Got 4.6/5.0 on Microsoft Store."/>
+            </DetailContent>
+
+            <Links>
+                <Link URL="https://github.com/totoroyyb/LightDays">
+                    GitHub Repo
+                </Link>
+            </Links>
+        </ProjectCard>
+
+        <ProjectCard Title="EquationBox"
+                     Date="2017.9"
+                     Role="Individual Developer">
+            <PillContent>
+                <PillButton Text="Universal Windows Platform"/>
+            </PillContent>
+
+            <DetailContent>
+                <DetailEntry Content="Explored ways of rendering mathematical equations natively, efficiently by KaTex and MathJS."/>
+                <DetailEntry Content="Made two demonstrative projects on GitHub to demonstrate how to integrate both KaTex and MathJS with UWP C# projects."/>
+            </DetailContent>
+
+            <Links>
+                <Link URL="https://github.com/totoroyyb/Render-Equations-In-UWP-By-MathJax">
+                    MathJax Demo
+                </Link>
+
+                <Link URL="https://github.com/totoroyyb/Render-Math-In-UWP-By-KaTex">
+                    KaTex Demo
+                </Link>
+            </Links>
+        </ProjectCard>
     </div>
 </div>
 

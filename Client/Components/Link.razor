@@ -1,6 +1,7 @@
 <a href="@URL" 
    class="font-medium border-b-2 border-cyan-600 hover:border-cyan-400
-          transition-colors duration-300 mx-1"
+          transition-colors duration-300 mx-1
+          @Class"
     target="@Target">
     <div class="inline-flex items-center">
         @ChildContent
@@ -22,6 +23,9 @@
 </a>
 
 @code {
+    [Parameter]
+    public string Class { get; set; }
+
     [Parameter]
     public string URL { get; set; }
 
