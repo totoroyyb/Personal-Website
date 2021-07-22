@@ -1,16 +1,61 @@
 @page "/experiences"
 
-<h1 class="text-4xl font-bold mb-4">Experiences</h1>
+@using BlazorApp.Client.Views.ProjectCards
 
-<p>Current count: @currentCount</p>
+<div class="flex flex-col justify-center">
+    <Divider />
 
-<button class="mt-4 bg-gradient-to-br from-green-600 to-green-500 hover:from-green-500 hover:to-green-600 text-white p-2 rounded border border-green-600" @onclick="IncrementCount">Click me</button>
+    <Title>Experiences</Title>
 
-@code {
-    private int currentCount = 0;
+    <div class="flex flex-wrap mt-3">
+        <ProjectCard Title="Research Assistant at DECAL Lab"
+                     Date="2021.4"
+                     Role="Research Assistant">
+            <PillContent>
+                <PillButton Text="Undergoing"/>
+                <PillButton Text="Research"/>
+            </PillContent>
 
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
-}
+            <DetailContent>
+                <DetailEntry Content="Worked with research group, which led by Prof. Filkov at UC Davis, on OSS Sustainability related research."/>
+                <DetailEntry Content="Worked with Likang Yin, PhD student at UC Davis, on modeling institutional statement topic with LDA by using socio-technical data and longitudinal data analysis."/>
+                <DetailEntry Content="Related paper has been submitted to CSCW 2022 and currently under review."/>
+            </DetailContent>
+        </ProjectCard>
+
+        <ProjectCard Title="House Analytic"
+                     Date="2021.3"
+                     Role="Research Assistant">
+            <PillContent>
+                <PillButton Text="Undergoing"/>
+                <PillButton Text="Research"/>
+            </PillContent>
+
+            <DetailContent>
+                <DetailEntry Content="Participated in house analytic research project which is led by Prof. Rafatirad at UC Davis."/>
+                <DetailEntry Content="Worked on server-side machine learning model to improve the accuracy of prediction for both sale and rental properties."/>
+                <DetailEntry Content="Contributed the start code for iOS app. I'll take on iOS app development later when the modeling is done."/>
+            </DetailContent>
+
+            <Links>
+                <Link URL="https://web.cs.ucdavis.edu/~srafatir/pages/research.html">
+                    Related Info
+                </Link>
+            </Links>
+        </ProjectCard>
+
+        <ProjectCard Title="iDEX Student Organization"
+                     Date="2019.5"
+                     Role="Founder">
+            <PillContent>
+                <PillButton Text="Student Org"/>
+            </PillContent>
+
+            <DetailContent>
+                <DetailEntry Content="Designed and developed the office website for club. Also, setup a blog for club."/>
+                <DetailEntry Content="Hosted two meetings per week. One is technical sharing session, and another one is team project session."/>
+                <DetailEntry Content="Aimed to provide a CS related incubator platform for students."/>
+            </DetailContent>
+        </ProjectCard>
+    </div>
+</div>
