@@ -10,12 +10,13 @@
     <div class="fixed flex z-40 drop-shadow-md justify-center content-center 
                 max-w-5xl mx-auto
                 inset-x-0 md:inset-x-8 h-16 top-0 rounded-b-lg
-              bg-gray-50 border-r-2 border-l-2 border-b-2 border-gray-100 border-opacity-90
-                bg-opacity-80 backdrop-blur-md">
+              bg-gray-50 dark:bg-gray-800 border-r-2 border-l-2 border-b-2 
+              border-gray-50 dark:border-gray-800 border-opacity-90
+                bg-opacity-80 dark:bg-opacity-80 backdrop-blur-md">
         <NavMenu />
         
         <div class="flex md:hidden content-center justify-between w-full">
-            <span class="self-center font-sans font-bold mx-4 text-xl">
+            <span class="self-center font-sans font-bold mx-4 text-xl adaptivetext">
                 Meet Yibo Yan
             </span>
 
@@ -25,7 +26,9 @@
                          transition duration-500
                          @menuButtonBg"
                          @onclick="ToggleMenu">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g data-name="Layer 2"><g data-name="menu"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"/><rect x="3" y="11" width="18" height="2" rx=".95" ry=".95"/><rect x="3" y="16" width="18" height="2" rx=".95" ry=".95"/><rect x="3" y="6" width="18" height="2" rx=".95" ry=".95"/></g></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="adapticoncolor" fill="currentColor" stroke="none" viewBox="0 0 24 24">
+                    <g data-name="Layer 2"><g data-name="menu"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"/><rect x="3" y="11" width="18" height="2" rx=".95" ry=".95"/><rect x="3" y="16" width="18" height="2" rx=".95" ry=".95"/><rect x="3" y="6" width="18" height="2" rx=".95" ry=".95"/></g></g>
+                </svg>
             </span>
         </div>
     </div>
@@ -34,9 +37,11 @@
     <div class="hidden md:flex justify-between 
                 max-w-5xl mx-auto z-40
                 fixed bottom-0 inset-x-8 px-3 py-3 
-                border-l-2 border-t-2 border-r-2 border-gray-100 border-opacity-90 rounded
-                bg-gray-50 shadow-t-md
-                bg-opacity-80 backdrop-blur-md">
+                border-l-2 border-t-2 border-r-2 
+                border-gray-50 dark:bg-gray-800 border-opacity-90 rounded
+                bg-gray-50 dark:border-gray-800 shadow-t-md
+                bg-opacity-80 dark:bg-opacity-80 backdrop-blur-md
+                adaptivetext">
         <div class="self-center">
             Some Button
         </div>
@@ -55,7 +60,7 @@
         </div>
         
         <div class="fixed bottom-0 h-48 w-screen
-                    inset-x-0 bg-gray-100 z-50
+                    inset-x-0 bg-gray-50 dark:bg-gray-800 z-50
                     transition-all duration-500 rounded-t-lg
                     @menuShadow
                     @menuTrans">

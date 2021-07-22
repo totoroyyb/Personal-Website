@@ -7,5 +7,13 @@
 }
 
 .navtext {
-    @apply font-sans font-medium text-gray-500 ml-4 mr-4 pb-1 border-b-2 border-indigo-500 hover:border-green-300;
+    @apply font-sans font-medium text-gray-700 dark:text-gray-200 ml-4 mr-4 pb-1 border-b-2 border-indigo-500 hover:border-green-300;
+}
+
+.adaptivetext {
+    @apply dark:text-gray-200
+}
+
+.adapticoncolor {
+    @apply text-gray-600 dark:text-gray-100
 }
