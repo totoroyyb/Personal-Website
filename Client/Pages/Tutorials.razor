@@ -1,16 +1,50 @@
 @page "/tutorials"
 
-<h1 class="text-4xl font-bold mb-4">Tutorials</h1>
+<div class="flex flex-col justify-center">
+    <Divider />
 
-<p>Current count: @currentCount</p>
+    <Title>Tutorials</Title>
 
-<button class="mt-4 bg-gradient-to-br from-green-600 to-green-500 hover:from-green-500 hover:to-green-600 text-white p-2 rounded border border-green-600" @onclick="IncrementCount">Click me</button>
+    <div class="flex flex-wrap mt-3">
+        <ProjectCard Title="iOS Development"
+                     Date="2021.6"
+                     Role="Author">
+            <PillContent>
+                <PillButton Text="Undergoing"/>
+                <PillButton Text="iOS Dev"/>
+                <PillButton Text="Swift"/>
+            </PillContent>
 
-@code {
-    private int currentCount = 0;
+            <DetailContent>
+                <DetailEntry Content="Introduced Swift and SwiftUI in this series. Talked about basic layout with SwiftUI, shapes, animations, bindings and more."/>
+                <DetailEntry Content="Planning to offer a student-taught (led by me) iOS class at UC Davis based on this series, with the help from Prof. King and Prof. Amenta."/>
+            </DetailContent>
 
-    private void IncrementCount()
-    {
-        currentCount++;
-    }
-}
+            <Links>
+                <Link URL="https://ios.totoroq.com/">
+                    Website (Only in English)
+                </Link>
+            </Links>
+        </ProjectCard>
+
+        <ProjectCard Title="Universal Windows Platform Dev"
+                     Date="2018.6"
+                     Role="Author">
+            <PillContent>
+                <PillButton Text="UWP"/>
+                <PillButton Text="Windows Dev"/>
+            </PillContent>
+
+            <DetailContent>
+                <DetailEntry Content="Wrote several chapters of UWP programming tutorials and published on several online forums."/>
+                <DetailEntry Content="Introduced basic C# and XAML. Introduced some native controls of Windows, data binding, chained animation, and so on."/>
+            </DetailContent>
+
+            <Links>
+                <Link URL="https://totoroyyb.github.io/UWP-Develop-Tutorial/">
+                    Website (Only in Chinese)
+                </Link>
+            </Links>
+        </ProjectCard>
+    </div>
+</div>
