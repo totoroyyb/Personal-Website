@@ -10,7 +10,8 @@
     <base href="/" />
 </head>
 
-<body class="bg-gray-100 dark:bg-gray-900">
+<body class="bg-gray-100 dark:bg-gray-900"
+      onload="setupTheme()">
     <div id="app">
         <div class="flex flex-col justify-center items-center
                     w-screen h-screen
@@ -46,6 +47,36 @@
             <a>🗙</a>
         </div>
     </div>
+
+    <script>
+        window.setupTheme = () => {
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                localStorage.theme = 'dark';
+                document.documentElement.classList.add('dark');
+            } else {
+                localStorage.theme = 'light';
+                document.documentElement.classList.remove('dark');
+            }
+        };
+
+        window.checkTheme = () => {
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                return "dark";
+            } else {
+                return "light";
+            }
+        };
+
+        window.toggleLight = () => {
+            localStorage.theme = 'light';
+            setupTheme();
+        };
+
+        window.toggleDark = () => {
+            localStorage.theme = 'dark';
+            setupTheme();
+        };
+    </script>
     <script src="_framework/blazor.webassembly.js"></script>
 </body>
 

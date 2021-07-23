@@ -15,5 +15,5 @@
 }
 
 .adapticoncolor {
-    @apply text-gray-600 dark:text-gray-100
+    @apply text-gray-600 dark:text-gray-300
 }
