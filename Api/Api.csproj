@@ -1,13 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- <RootNamespace>test-net6.Server</RootNamespace> -->
+    <AssemblyName>$(AssemblyName.Replace(' ', '_'))</AssemblyName>
+    <!-- <TargetFramework>netcoreapp3.1</TargetFramework> -->
     <AzureFunctionsVersion>v3</AzureFunctionsVersion>
     <RootNamespace>BlazorApp.Api</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="IpInfo" Version="1.1.9" />
-    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.20.1" />
-    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.3" />
+    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.30.0" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shared\Shared.csproj" />

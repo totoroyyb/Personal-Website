@@ -44,7 +44,7 @@ namespace BlazorApp.Api
                 NullValueHandling = NullValueHandling.Ignore
             });
 
-            var geoInfo = new GeoInfo(responseInfo);
+            var geoInfo = new Shared.GeoInfo(responseInfo);
 
             var db = new CosmosDBOps();
             await db.StoreToCosmosDB<GeoInfo>(geoInfo);
