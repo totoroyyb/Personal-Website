@@ -3,9 +3,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <!-- <RootNamespace>test-net6.Server</RootNamespace> -->
     <AssemblyName>$(AssemblyName.Replace(' ', '_'))</AssemblyName>
-    <!-- <TargetFramework>netcoreapp3.1</TargetFramework> -->
     <AzureFunctionsVersion>v3</AzureFunctionsVersion>
     <RootNamespace>BlazorApp.Api</RootNamespace>
   </PropertyGroup>
