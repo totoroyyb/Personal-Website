@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>$(AssemblyName.Replace(' ', '_'))</AssemblyName>
     <NpmLastInstall>node_modules/.last-install</NpmLastInstall>
-     <RootNamespace>BlazorApp.Client</RootNamespace> 
+    <RootNamespace>BlazorApp.Client</RootNamespace> 
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'BlazorSWA-Weather' ">
