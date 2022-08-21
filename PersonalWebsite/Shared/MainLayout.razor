@@ -1,9 +1,7 @@
 ﻿@inherits LayoutComponentBase
 
-@using BlazorApp.Client.Services;
 @using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
-@inject IApiClientService _apiClientService;
 @inject IWebAssemblyHostEnvironment HostEnvironment;
 
 <div class="px-6 md:px-10 mx-auto max-w-5xl">
@@ -126,7 +124,7 @@
         {
             try 
             {
-                await _apiClientService.GetLocationAsync();
+                @* await _apiClientService.GetLocationAsync(); *@
             } 
             catch
             {
