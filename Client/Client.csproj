@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>$(AssemblyName.Replace(' ', '_'))</AssemblyName>
-    <NpmLastInstall>node_modules/.last-install</NpmLastInstall>
+    <!-- <NpmLastInstall>node_modules/.last-install</NpmLastInstall> -->
     <RootNamespace>BlazorApp.Client</RootNamespace> 
   </PropertyGroup>
 
